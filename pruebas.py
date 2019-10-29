@@ -1,4 +1,3 @@
-
 #cadenas de texto
 my_hello_world = "Hello World!"
 print(my_hello_world)
@@ -36,20 +35,22 @@ print(sumaValores(45,72) )
 
 def calculoDeAreaDeUnTriangulo(base,altura):
 	'''Definir el calculo del area a partir de su base y altura'''
-	#codigo aca, retornar valor
-	pass
+	return base * altura / 2
 
-print(calculoDeAreaDeUnTriangulo(4,5)  ) #debe retornar 10
+print(calculoDeAreaDeUnTriangulo(4,5)) #debe retornar 10
 
 def factorial(valor):	
 	'''Definir la funcion recursiva del calculo factorial'''
-	pass
+	if (valor <= 1):
+		return 1
+	else:
+		return valor * factorial(valor - 1)
 
 print(factorial(8))  #debe imprimir 40320
 
 def palindromo(cadena_de_texto):
 	'''Definir una funcion que verifica si una cadena de texto es palinfromo'''
-
+	return cadena_de_texto == cadena_de_texto[::-1]
 	pass
 
 print(palindromo('anitalavalatina') )   #debe retornar verdadero
@@ -57,12 +58,14 @@ print(palindromo('anitalavalatina') )   #debe retornar verdadero
 def separar_palabras(texto):
 	''' Se debe separa cada palabra de un texto e imprimir una lista 
 	para cada palabra, las palabras seran separadas por un espacio'''
-	#codigo de la funcion
-	pass 
+	return texto.split()
 
 separar_palabras('Si se puede imaginar, se puede programar')
 
 
+def regla_de_verificacion(valor,metrica):
+	'''si el valor a es mayor al valor b retornar verdadero '''
+	return valor > metrica
 
 def identificar_valores_altos(lista, metrica):
 	'''Dada una funcion de verificacion, iterar sobre una lista y retornar
@@ -71,19 +74,13 @@ def identificar_valores_altos(lista, metrica):
 	# iteracion
 		# condicion a cumplir de la verificacion con el valor mayor a de la metrica
 			# añadir valor a la nueva lista
-	#retornar nueva lista
-	pass
+	# retornar nueva lista
 
-def regla_de_verificacion(valor,metrica):
-	'''si el valor a es mayor al valor b retornar verdadero '''
-	pass
-
+	# mas facil:
+	return list(filter(lambda x: regla_de_verificacion(x, metrica), lista))
 
 lista= [44,75,98,36,0,21,-12,63,44]
 
 n_lista = identificar_valores_altos(lista, 50 )
 
 print(n_lista)
-
-
-
